@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="ejemplosApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>El Clima</title>
+
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+
+        <!-- Incluir AngularJS -->
+        <script src="js/lib/angular.min.js"></script>
+
+        <script src="js/app.js"></script>
+        
+    </head>    
+    <body>
+
+        <div class="container" ng-controller="mainCtrl">
+            
+            <h1>Clima</h1>
+            <h4>Manejo de recursos online</h4>
+            <hr>
+            
+            lat y lon: {{clima.coord.lat}}, {{clima.coord.lon}}
+            <br><br>
+
+            Pais: {{clima.sys.country}}
+            <br><br>
+
+            Amanece: {{clima.sys.sunrise | date:'HH:mm:ss'}}
+            <br><br>
+
+            Anochece: {{clima.sys.sunset | date:'HH:mm:ss'}}
+
+            <br><br>
+            {{ clima | json }}
+
+
+        </div><!-- fin del listadoCtrl -->
+
+    </body>
+</html>
