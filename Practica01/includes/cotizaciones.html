@@ -1,0 +1,42 @@
+<h1>Cotizaciones</h1>
+
+<h4>Listado de las cotizaciones</h4>
+
+<table class="table table-striped" id="tblCotiza">
+	<caption>table title and/or explanatory text</caption>
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>nombre</th>
+			<th>apellido</th>
+			<th>edad</th>
+			<th>teléfono</th>
+			<th>email</th>
+			<th>dirección</th>
+			<th>modelo</th>
+			<th>solicitud</th>
+			<th>comentario</th>
+			<th>fecha</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="cotiza in listaCotizaciones | limitTo: inicio : limite">
+			<td>{{ cotiza.id }}</td>
+			<td>{{ cotiza.nombre }}</td>
+			<td>{{ cotiza.apellido }}</td>
+			<td>{{ cotiza.edad }}</td>
+			<td>{{ cotiza.telefono | telefono }}</td>
+			<td>{{ cotiza.email }}</td>
+			<td>{{ cotiza.direccion }}</td>
+			<td>{{ cotiza.modelo }}</td>
+			<td>{{ cotiza.solicitud }}</td>
+			<td>{{ cotiza.comentario }}</td>
+			<td>{{ cotiza.fecha }}</td>
+		</tr>
+	</tbody>
+</table>
+
+<br>
+
+<button type="button" class="btn btn-primary" ng-click="anteriores()">Anteriores</button>
+<button type="button" class="btn btn-custom" ng-click="siguientes()">Siguientes</button>

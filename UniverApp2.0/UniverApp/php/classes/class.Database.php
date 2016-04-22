@@ -13,8 +13,8 @@ class Database{
 
 	private $_connection;
 	private $_host = "localhost";
-	private $_user = "univer_user";
-	private $_pass = "123456";
+	private $_user = "root";
+	private $_pass = "";
 	private $_db   = "univer_db";
 
 

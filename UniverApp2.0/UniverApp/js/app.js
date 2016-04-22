@@ -16,3 +16,9 @@ app.controller('mainCtrl', ['$scope','$http', function($scope,$http){
 	}
 
 }]);
+
+app.filter('telefono', function(){
+	return function(numero){
+		return numero.substring(0,3) + " - " + numero.substring(3);
+	}
+});

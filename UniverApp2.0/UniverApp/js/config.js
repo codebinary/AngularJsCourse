@@ -13,6 +13,10 @@ app.config( function($routeProvider){
 			templateUrl: 'parciales/alumnos.html',
 			controller: 'alumnosCtrl'
 		})
+		.when('/alumno/:codigo', {
+			templateUrl: 'parciales/alumno.html',
+			controller: 'alumnoCtrl'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
