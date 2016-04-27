@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="promesasApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+	<!-- Angular JS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="angular/app.js"></script>
+	<script src="angular/controladores.js"></script>
+	<script src="angular/servicios.js"></script>
+
+
+
+</head>
+<body>
+		
+	<div class="container" ng-controller="personasCtrl">
+		<h1>Servicios</h1>
+		<hr>
+
+		<pre>{{personas | json}}</pre>
+	</div>
+
+</body>
+</html>
