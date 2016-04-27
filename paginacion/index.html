@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="paginacionApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Paginación de lado del servidor</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	
+	<script src="angular/app.js"></script>
+	<script src="angular/servicios.js"></script>
+	<script src="angular/controladores.js"></script>
+	
+
+</head>
+<body>
+	
+	<div class="container" ng-controller="paisesCtrl">
+		
+		<h1>Paginación <small>en servidor</small></h1>	
+		<hr>
+
+		<pre>{{paises | json }}</pre>
+
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>ISO</th>
+					<th>Nombre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="pais in paises.data">
+					<td>{{ pais.id }}</td>
+					<td>{{ pais.iso }}</td>
+					<td>{{ pais.nombre }}</td>
+				</tr>
+			</tbody>
+		</table>
+	 
+	
+
+
+	</div>
+
+</body>
+</html>

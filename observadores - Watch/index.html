@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="paginacionApp">
+<head>
+	<meta charset="UTF-8">
+	<title>$scope $watch</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+	<script src="js/lib/angular.min.js"></script>
+
+	<script src="angular/app.js"></script>
+	<script src="angular/servicios.js"></script>
+	<script src="angular/controladores.js"></script>
+	
+
+</head>
+<body>
+	
+	<div class="container" ng-controller="observadorCtrl">
+		
+		<h1>Watch <small>cambios de las variables</small></h1>	
+		<hr>
+
+		<label>{{ nombre }}</label>
+		<input type="text" class="form-control" ng-model="nombre">
+
+
+
+	</div>
+
+</body>
+</html>

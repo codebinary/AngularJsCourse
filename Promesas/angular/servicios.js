@@ -1,9 +1,10 @@
 var app = angular.module('promesasApp.servicios', []);
 
-app.factory('Personas', ['$http', '$q', '$rootScope' function($http, $q, $rootScope){
+app.factory('Personas', ['$http', '$q', '$rootScope', function($http, $q, $rootScope){
 	
 	var self = {
 		"cargando": false,
+		"mensaje": "",
 		"data": []
 	};
 
@@ -17,22 +18,35 @@ app.factory('Personas', ['$http', '$q', '$rootScope' function($http, $q, $rootSc
 		.then(function success(respuesta){
 
 			q.resolve(respuesta.data);
-
+			console.log("Succesfull!!")
 			/*self.cargando = false;
 			self.data = respuesta.data;
 
 			console.log("Todo bien !!!");
 			console.log(data);*/
 
-		}, function error(response){
+			}, function error(response){
 
-			console.log("Algo paso mal !!!");
-			q.reject("Error al cargar");
-		});
+				console.log("Algo paso mal !!!");
+				q.reject("Error al cargar");
+
+			});
+
+		return q.promise;
 	};
 
 	//rootScope es lo que esta mas arriba de todo
-	self.cargarData();
+	$rootScope.promise = self.cargarData();
+	$rootScope.promise.then(
+		function(data){
+			self.cargando = false;
+			self.mensaje = "Informacion cargada correctamente";
+			self.data = data;
+		},
+		function(error){
+			self.mensaje = "Error al cargar la informacion";
+			console.error(error)
+		});
 
 	return self;
 
